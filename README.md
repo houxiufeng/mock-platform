@@ -35,7 +35,16 @@
 mvn clean package
 ```
 
-### 2. 启动服务
+### 2. 启动/重启服务
+
+支持直接使用 `restart.sh` 脚本优雅停止旧进程并启动服务：
+```bash
+./restart.sh                  # 默认 local profile，自动获取配置文件端口 (8222)
+./restart.sh prod             # 指定 prod profile
+./restart.sh local 8222       # 显式指定 profile 与端口
+```
+
+或直接执行 JAR 包：
 ```bash
 java -jar target/mock-platform-1.0.0.jar
 ```
